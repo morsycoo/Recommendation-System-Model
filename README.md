@@ -154,11 +154,11 @@ $$
 
 Where:
 
-- \(u\) is a user.
-- \(i\) is an article.
-- \(E_{u,i}\) is the set of recorded events for that user and article.
-- \(w(e)\) is the strength assigned to an event.
-- \(s_{u,i}\) is the resulting aggregated interaction strength.
+- $(u\)$ is a user.
+- $(i\)$ is an article.
+- $(E_{u,i}\)$ is the set of recorded events for that user and article.
+- $(w(e)\)$ is the strength assigned to an event.
+- $(s_{u,i}\)$ is the resulting aggregated interaction strength.
 
 After aggregation, the notebook contains **39,106 unique user–article interaction pairs**.
 
@@ -216,11 +216,11 @@ The profile is a weighted average: articles associated with stronger interaction
 
 Conceptually:
 
-[
-\mathbf{p}u =
+$$
+mathbf{p}u =
 \frac{\sum{i \in I_u} s_{u,i}\mathbf{v}i}
 {\left| \sum{i \in I_u} s_{u,i}\mathbf{v}_i \right|_2}
-]
+$$
 
 Where:
 
@@ -237,7 +237,7 @@ The notebook builds profiles for **1,140 users**. Each profile has 5,000 feature
 For a given user, the system computes cosine similarity between the user's profile and all article vectors.
 
 [
-\mathrm{sim}(u,i) =
+mathrm{sim}(u,i) =
 \frac{\mathbf{p}_u \cdot \mathbf{v}_i}
 {|\mathbf{p}_u|_2 \times |\mathbf{v}_i|_2}
 ]
