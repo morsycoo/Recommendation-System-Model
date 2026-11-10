@@ -148,9 +148,9 @@ A user may interact with the same article multiple times and may perform differe
 
 To reduce the effect of very large accumulated values, a base-2 logarithmic transformation is applied:
 
-$$
+\[
 s_{u,i} = \log_2(1 + \sum_{e \in E_{u,i}} w(e))
-$$
+\]
 
 Where:
 
@@ -216,16 +216,18 @@ The profile is a weighted average: articles associated with stronger interaction
 
 Conceptually:
 
-$$
-\mathbf{p}_u = \operatorname{Normalize} \left( \frac{\sum_{i \in I_u} s_{u,i}\mathbf{v}_i} {\sum_{i \in I_u} s_{u,i}} \right)
-$$
+\[
+\mathbf{p}_u =
+\frac{\displaystyle \sum_{i \in I_u} s_{u,i}\mathbf{v}_i}
+{\displaystyle \left\| \sum_{i \in I_u} s_{u,i}\mathbf{v}_i \right\|_2}
+\]
 
 Where:
 
-- $(\mathbf{p}_u\)$ is the profile vector for user \(u\).
-- $(I_u\)$ is the set of articles interacted with by user \(u\) in the training set.
-- $(s_{u,i}\)$ is the aggregated interaction strength.
-- $(\mathbf{v}_i\)$ is the TF-IDF vector for article $(i$).
+- \(\mathbf{p}_u\) is the profile vector for user \(u\).
+- \(I_u\) is the set of articles interacted with by user \(u\) in the training set.
+- \(s_{u,i}\) is the aggregated interaction strength.
+- \(\mathbf{v}_i\) is the TF-IDF vector for article \(i\).
 - `Normalize` applies vector normalization.
 
 The notebook builds profiles for **1,140 users**. Each profile has 5,000 features, matching the article TF-IDF feature space.
@@ -234,11 +236,11 @@ The notebook builds profiles for **1,140 users**. Each profile has 5,000 feature
 
 For a given user, the system computes cosine similarity between the user's profile and all article vectors.
 
-$$
-\operatorname{sim}(u,i) =
+\[
+\mathrm{sim}(u,i) =
 \frac{\mathbf{p}_u \cdot \mathbf{v}_i}
 {\|\mathbf{p}_u\|\,\|\mathbf{v}_i\|}
-$$
+\]
 
 Articles are sorted by descending similarity. The recommender can then exclude article IDs supplied through `items_to_ignore` and return the requested number of results.
 
