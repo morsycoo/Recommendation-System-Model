@@ -216,21 +216,21 @@ The profile is a weighted average: articles associated with stronger interaction
 
 Conceptually:
 
-\[
+$$
 \mathbf{p}_u =
 \operatorname{Normalize}
 \left(
 \frac{\sum_{i \in I_u} s_{u,i}\mathbf{v}_i}
 {\sum_{i \in I_u} s_{u,i}}
 \right)
-\]
+$$
 
 Where:
 
-- \(\mathbf{p}_u\) is the profile vector for user \(u\).
-- \(I_u\) is the set of articles interacted with by user \(u\) in the training set.
-- \(s_{u,i}\) is the aggregated interaction strength.
-- \(\mathbf{v}_i\) is the TF-IDF vector for article \(i\).
+- $(\mathbf{p}_u\)$ is the profile vector for user \(u\).
+- $(I_u\)$ is the set of articles interacted with by user \(u\) in the training set.
+- $(s_{u,i}\)$ is the aggregated interaction strength.
+- $(\mathbf{v}_i\)$ is the TF-IDF vector for article $(i$).
 - `Normalize` applies vector normalization.
 
 The notebook builds profiles for **1,140 users**. Each profile has 5,000 features, matching the article TF-IDF feature space.
