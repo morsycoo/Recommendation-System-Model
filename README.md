@@ -148,9 +148,9 @@ A user may interact with the same article multiple times and may perform differe
 
 To reduce the effect of very large accumulated values, a base-2 logarithmic transformation is applied:
 
-$
+$$
 s_{u,i} = \log_2(1 + \sum_{e \in E_{u,i}} w(e))
-$
+$$
 
 Where:
 
@@ -239,11 +239,11 @@ The notebook builds profiles for **1,140 users**. Each profile has 5,000 feature
 
 For a given user, the system computes cosine similarity between the user's profile and all article vectors.
 
-\[
+$$
 \operatorname{sim}(u,i) =
 \frac{\mathbf{p}_u \cdot \mathbf{v}_i}
 {\|\mathbf{p}_u\|\,\|\mathbf{v}_i\|}
-\]
+$$
 
 Articles are sorted by descending similarity. The recommender can then exclude article IDs supplied through `items_to_ignore` and return the requested number of results.
 
