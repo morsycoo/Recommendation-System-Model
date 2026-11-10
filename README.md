@@ -217,12 +217,7 @@ The profile is a weighted average: articles associated with stronger interaction
 Conceptually:
 
 $$
-\mathbf{p}_u =
-\operatorname{Normalize}
-\left(
-\frac{\sum_{i \in I_u} s_{u,i}\mathbf{v}_i}
-{\sum_{i \in I_u} s_{u,i}}
-\right)
+\mathbf{p}_u = \operatorname{Normalize} \left( \frac{\sum_{i \in I_u} s_{u,i}\mathbf{v}_i} {\sum_{i \in I_u} s_{u,i}} \right)
 $$
 
 Where:
