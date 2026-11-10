@@ -148,9 +148,9 @@ A user may interact with the same article multiple times and may perform differe
 
 To reduce the effect of very large accumulated values, a base-2 logarithmic transformation is applied:
 
-$
+$$
 s_{u,i} = \log_2(1 + \sum_{e \in E_{u,i}} w(e))
-$
+$$
 
 Where:
 
